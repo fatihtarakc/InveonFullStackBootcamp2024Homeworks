@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section1SolidPrinciple", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section2AsynchronousProgramming", "Section2AsynchronousProgramming\Section2AsynchronousProgramming.csproj", "{5EAEBD49-FA20-47B7-A6B6-8D55F22843DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section3.LibraryManagementSystem", "Section3.LibraryManagementSystem\Section3.LibraryManagementSystem.csproj", "{840BABE9-D910-40EB-9E86-6037DAAB7A09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5EAEBD49-FA20-47B7-A6B6-8D55F22843DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EAEBD49-FA20-47B7-A6B6-8D55F22843DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EAEBD49-FA20-47B7-A6B6-8D55F22843DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{840BABE9-D910-40EB-9E86-6037DAAB7A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{840BABE9-D910-40EB-9E86-6037DAAB7A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{840BABE9-D910-40EB-9E86-6037DAAB7A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{840BABE9-D910-40EB-9E86-6037DAAB7A09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
