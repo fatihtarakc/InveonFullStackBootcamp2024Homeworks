@@ -1,0 +1,6 @@
+@Section3.ErrorManagement_HostAddress = http://localhost:5193
+
+GET {{Section3.ErrorManagement_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

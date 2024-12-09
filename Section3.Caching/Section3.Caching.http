@@ -1,0 +1,6 @@
+@Section3.Caching_HostAddress = http://localhost:5039
+
+GET {{Section3.Caching_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
