@@ -7,11 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section1SolidPrinciple", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section2AsynchronousProgramming", "Section2AsynchronousProgramming\Section2AsynchronousProgramming.csproj", "{5EAEBD49-FA20-47B7-A6B6-8D55F22843DC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Inveon1stHomework03December2024", "Inveon1stHomework03December2024", "{3C672D2B-6A7C-4EFE-87CF-F8762C2E751F}"
-	ProjectSection(SolutionItems) = preProject
-		Inveon1stHomework03December2024\Inveon1stHomework03 December2024.pdf = Inveon1stHomework03December2024\Inveon1stHomework03 December2024.pdf
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
