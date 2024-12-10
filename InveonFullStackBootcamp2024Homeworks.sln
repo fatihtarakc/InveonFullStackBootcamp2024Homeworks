@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section3.ErrorManagement", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section3.Caching", "Section3.Caching\Section3.Caching.csproj", "{9992B85C-8B8B-4287-8975-E54E3BD8AE84}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2ndWeekHomework", "2ndWeekHomework", "{C5017841-8811-4AAE-A270-0001499FE452}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManageementSystem.UI", "LibraryManageementSystem.UI\LibraryManageementSystem.UI.csproj", "{AA24858E-7F34-4148-A4D1-4746AD77DE31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,8 +49,15 @@ Global
 		{9992B85C-8B8B-4287-8975-E54E3BD8AE84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9992B85C-8B8B-4287-8975-E54E3BD8AE84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9992B85C-8B8B-4287-8975-E54E3BD8AE84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA24858E-7F34-4148-A4D1-4746AD77DE31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA24858E-7F34-4148-A4D1-4746AD77DE31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA24858E-7F34-4148-A4D1-4746AD77DE31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA24858E-7F34-4148-A4D1-4746AD77DE31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AA24858E-7F34-4148-A4D1-4746AD77DE31} = {C5017841-8811-4AAE-A270-0001499FE452}
 	EndGlobalSection
 EndGlobal
