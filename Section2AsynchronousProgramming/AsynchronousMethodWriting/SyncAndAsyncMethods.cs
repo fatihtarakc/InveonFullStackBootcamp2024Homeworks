@@ -2,18 +2,18 @@
 {
     class Program
     {
-        static async Task Main(string[] args)
-        {
-            var syncAndAsyncMethods = new SyncAndAsyncMethods();
+        //static async Task Main(string[] args)
+        //{
+        //    var syncAndAsyncMethods = new SyncAndAsyncMethods();
 
-            Console.WriteLine("The synchronous method started to work...");
-            syncAndAsyncMethods.SyncProcess();
-            Console.WriteLine("The synchronous method was completed !");
+        //    Console.WriteLine("The synchronous method started to work...");
+        //    syncAndAsyncMethods.SyncProcess();
+        //    Console.WriteLine("The synchronous method was completed !");
 
-            Console.WriteLine("The asynchronous method started to work...");
-            await syncAndAsyncMethods.AsyncProcess();
-            Console.WriteLine("The asynchronous method was completed !");
-        }
+        //    Console.WriteLine("The asynchronous method started to work...");
+        //    await syncAndAsyncMethods.AsyncProcess();
+        //    Console.WriteLine("The asynchronous method was completed !");
+        //}
     }
 
     public class SyncAndAsyncMethods
