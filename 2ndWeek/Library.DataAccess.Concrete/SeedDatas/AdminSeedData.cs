@@ -12,7 +12,6 @@
             dbContextOptionsBuilder.UseSqlServer(connectionOptions?.MssqlServerConnectionString);
 
             using LibraryDbContext db = new(dbContextOptionsBuilder.Options);
-
             if (!(await db.Roles.AnyAsync())) await AddRolesAsync(db);
 
             if ((await userManager.FindByEmailAsync(email) is null ? false : true) is false) await AddAdminAsync(db, userManager);
@@ -53,7 +52,8 @@
             {
                 if (await db.Roles.AnyAsync(dbRole => dbRole.Name == role.ToString())) continue;
 
-                await db.Roles.AddAsync(new IdentityRole(role.ToString()));
+                await db.Roles.AddAsync(new IdentityRole { Name = role.ToString(), NormalizedName = role.ToString().ToUpperInvariant() });
+                await db.SaveChangesAsync();
             }
         }
     }

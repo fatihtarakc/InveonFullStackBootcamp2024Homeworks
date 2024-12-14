@@ -4,11 +4,12 @@
     {
         public static IServiceCollection AddDataAccessServices(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddHttpContextAccessor();
+
             services.Configure<ConnectionOptions>
                 (configuration.GetSection(ConnectionOptions.Connections));
 
             var connectionOptions = configuration.GetSection(ConnectionOptions.Connections).Get<ConnectionOptions>();
-
             services.AddDbContext<LibraryDbContext>(dbContextOptionsBuilder =>
             {
                 dbContextOptionsBuilder.UseLazyLoadingProxies();
@@ -16,7 +17,7 @@
                     sqlServerDbContextOptionsBuilder => sqlServerDbContextOptionsBuilder.EnableRetryOnFailure(10, TimeSpan.FromSeconds(10), null));
             });
 
-            services.AddIdentity<IdentityUser, IdentityRole>().AddRoles<IdentityRole>().AddEntityFrameworkStores<LibraryDbContext>().AddErrorDescriber<CustomIdentityErrorDescriber>();
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<LibraryDbContext>().AddErrorDescriber<CustomIdentityErrorDescriber>().AddDefaultTokenProviders();
 
             return services;
         }

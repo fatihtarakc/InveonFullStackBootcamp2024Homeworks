@@ -8,10 +8,10 @@
             this.httpContextAccessor = httpContextAccessor;
         }
 
-        public virtual DbSet<Admin> Admins { get; set; }
-        public virtual DbSet<AppUser> AppUsers { get; set; }
-        public virtual DbSet<AppUserBook> AppUserBooks { get; set; }
-        public virtual DbSet<Book> Books { get; set; }
+        public virtual DbSet<Admin>? Admins { get; set; }
+        public virtual DbSet<AppUser>? AppUsers { get; set; }
+        public virtual DbSet<AppUserBook>? AppUserBooks { get; set; }
+        public virtual DbSet<Book>? Books { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -34,7 +34,7 @@
         private void SetBaseProperties()
         {
             var entityEntries = ChangeTracker.Entries<AuditableBaseEntity>();
-            var userId = httpContextAccessor?.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier) ?? "User do not found !";
+            var userId = httpContextAccessor?.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier) ?? "User do not found !";
 
             foreach (var entityEntry in entityEntries)
             {
