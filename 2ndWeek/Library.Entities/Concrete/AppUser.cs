@@ -1,6 +1,16 @@
 ﻿namespace Library.Entities.Concrete
 {
-    public class AppUser : IdentityUser<Guid>
+    public class AppUser : AuditablePersonBaseEntity
     {
+        public AppUser() 
+        {
+            AppUserBooks = new HashSet<AppUserBook>();
+        }
+
+        public string Name { get; set; }
+        public string Surname { get; set; }
+
+        // Relations
+        public virtual ICollection<AppUserBook> AppUserBooks { get; set; }
     }
 }

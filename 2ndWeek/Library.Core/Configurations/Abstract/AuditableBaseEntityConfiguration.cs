@@ -5,9 +5,10 @@
         public override void Configure(EntityTypeBuilder<T> builder)
         {
             base.Configure(builder);
-            builder.Property(auditableEntity => auditableEntity.CreatedBy).HasMaxLength(100);
-            builder.Property(auditableEntity => auditableEntity.DeletedBy).HasMaxLength(100);
-            builder.Property(auditableEntity => auditableEntity.ModifiedBy).HasMaxLength(100);
+
+            builder.Property(auditableEntity => auditableEntity.CreatedBy).HasMaxLength(50);
+            builder.Property(auditableEntity => auditableEntity.DeletedBy).HasMaxLength(50);
+            builder.Property(auditableEntity => auditableEntity.ModifiedBy).HasMaxLength(50);
         }
     }
 }

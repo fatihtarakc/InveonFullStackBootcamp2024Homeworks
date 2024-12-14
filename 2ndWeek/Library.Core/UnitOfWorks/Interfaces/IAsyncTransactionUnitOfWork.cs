@@ -1,4 +1,4 @@
-﻿namespace Library.Core.UnitOfWork.Interfaces
+﻿namespace Library.Core.UnitOfWorks.Interfaces
 {
     public interface IAsyncTransactionUnitOfWork
     {

@@ -2,6 +2,6 @@
 {
     public interface IAsyncUpdatableRepository<Entity> where Entity : AuditableBaseEntity
     {
-        Task<Entity> UpdateAsync(Entity entity);
+        ValueTask<Entity> UpdateAsync(Entity entity);
     }
 }

@@ -1,6 +1,4 @@
 ﻿namespace Library.Entities.Concrete
 {
-    public class Admin : AuditablePersonBaseEntity
-    {
-    }
+    public class Admin : AuditablePersonBaseEntity { }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Library.Core.Repositories.Abstract
 {
-    public abstract class GenericRepository<Entity> : 
+    public abstract class GenericRepository<Entity> :
         IAsyncAddableRepository<Entity>, IAsyncDeletableRepository<Entity>, IAsyncUpdatableRepository<Entity>,
         IAsyncQueryableRepository<Entity>, IAsyncOrderableRepository<Entity> where Entity : AuditableBaseEntity
     {
@@ -9,11 +9,44 @@
         protected GenericRepository(IdentityDbContext<IdentityUser, IdentityRole, string> db)
         {
             this.db = db;
-            dbEntity = db.Set<Entity>();
+            dbEntity = this.db.Set<Entity>();
         }
 
-        public async Task<Entity> AddAsync(Entity entity)  => (await dbEntity.AddAsync(entity)).Entity;
+        protected IQueryable<Entity> GetAllByStatusIsNotDeletedByTracking(bool tracking = true) =>
+            tracking ? dbEntity.Where(entity => entity.Status != Status.Deleted) : (dbEntity.Where(entity => entity.Status != Status.Deleted)).AsNoTracking();
 
-        public Task DeleteAsync(Entity entity) => Task.FromResult(dbEntity.Remove(entity));
+        
+        public async ValueTask<Entity> AddAsync(Entity entity) => (await dbEntity.AddAsync(entity)).Entity;
+
+        public async Task AddRangeAsync(IEnumerable<Entity> entities) => await dbEntity.AddRangeAsync(entities);
+
+
+        public async ValueTask DeleteAsync(Entity entity) => await Task.FromResult(dbEntity.Remove(entity));
+
+
+        public async ValueTask<Entity> UpdateAsync(Entity entity) => (await Task.FromResult(dbEntity.Update(entity))).Entity;
+
+
+        public async Task<bool> AnyAsync(Expression<Func<Entity, bool>> expression = null) =>
+            expression is null ? await GetAllByStatusIsNotDeletedByTracking().AnyAsync() : await GetAllByStatusIsNotDeletedByTracking().AnyAsync(expression);
+
+        public async Task<Entity> GetByIdAsync(Guid entityId, bool tracking = true) =>
+            await GetAllByStatusIsNotDeletedByTracking(tracking).FirstOrDefaultAsync(entity => entity.Id == entityId);
+
+        public async Task<Entity> GetFirstOrDefaultAsync(Expression<Func<Entity, bool>> expression, bool tracking = true) =>
+            await GetAllByStatusIsNotDeletedByTracking(tracking).FirstOrDefaultAsync(expression);
+
+        public async Task<IEnumerable<Entity>> GetAllWhereAsync(Expression<Func<Entity, bool>> expression, bool tracking = true) =>
+            await GetAllByStatusIsNotDeletedByTracking(tracking).Where(expression).ToListAsync();
+
+        public async Task<IEnumerable<Entity>> GetAllAsync(bool tracking = true) =>
+            await GetAllByStatusIsNotDeletedByTracking(tracking).ToListAsync();
+
+
+        public async Task<IEnumerable<Entity>> GetAllWhereAsync<TKey>(Expression<Func<Entity, TKey>> orderby, bool orderDesc = false, bool tracking = true) =>
+            orderDesc ? await GetAllByStatusIsNotDeletedByTracking(tracking).OrderByDescending(orderby).ToListAsync() : await GetAllByStatusIsNotDeletedByTracking(tracking).OrderBy(orderby).ToListAsync();
+
+        public async Task<IEnumerable<Entity>> GetAllWhereAsync<TKey>(Expression<Func<Entity, bool>> expression, Expression<Func<Entity, TKey>> orderby, bool orderDesc = false, bool tracking = true) =>
+            orderDesc ? await GetAllByStatusIsNotDeletedByTracking(tracking).Where(expression).OrderByDescending(orderby).ToListAsync() : await GetAllByStatusIsNotDeletedByTracking(tracking).Where(expression).OrderBy(orderby).ToListAsync();
     }
 }

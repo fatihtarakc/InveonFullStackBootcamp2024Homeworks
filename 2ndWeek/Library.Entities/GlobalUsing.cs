@@ -1,3 +1,1 @@
-﻿global using Microsoft.AspNetCore.Identity;
-
-global using Library.Core.Entities.Abstract;
+﻿global using Library.Core.Entities.Abstract;

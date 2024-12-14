@@ -1,4 +1,4 @@
-﻿namespace Library.Core.Entities.Abstract
+﻿namespace Library.Core.Entities.Abstract.Interfaces
 {
     public interface IUpdatableEntity
     {

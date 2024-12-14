@@ -1,11 +1,17 @@
+using Library.Business.Extensions;
+using Library.DataAccess.Concrete.Extensions;
+using Library.DataAccess.Extensions;
 using Library.MVC.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddMvcServices();
-
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddBusinessServices();
+builder.Services.AddDataAccessServices(builder.Configuration);
+builder.Services.AddDataAccessConcreteServices(builder.Configuration);
+builder.Services.AddMvcServices();
 
 var app = builder.Build();
 

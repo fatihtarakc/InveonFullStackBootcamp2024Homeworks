@@ -2,7 +2,5 @@
 {
     public interface IAdminRepository :
         IAsyncAddableRepository<Admin>, IAsyncDeletableRepository<Admin>, IAsyncUpdatableRepository<Admin>,
-        IAsyncQueryableRepository<Admin>, IAsyncOrderableRepository<Admin>
-    {
-    }
+        IAsyncQueryableRepository<Admin>, IAsyncOrderableRepository<Admin> { }
 }

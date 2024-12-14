@@ -2,6 +2,6 @@
 {
     public interface IAsyncDeletableRepository<Entity> where Entity : AuditableBaseEntity
     {
-        Task DeleteAsync(Entity entity);
+        ValueTask DeleteAsync(Entity entity);
     }
 }

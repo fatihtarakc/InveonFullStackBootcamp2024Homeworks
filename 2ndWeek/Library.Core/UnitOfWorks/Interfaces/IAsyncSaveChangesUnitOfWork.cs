@@ -1,6 +1,6 @@
-﻿namespace Library.Core.UnitOfWork.Interfaces
+﻿namespace Library.Core.UnitOfWorks.Interfaces
 {
-    public interface IAsyncUnitOfWork
+    public interface IAsyncSaveChangesUnitOfWork
     {
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }

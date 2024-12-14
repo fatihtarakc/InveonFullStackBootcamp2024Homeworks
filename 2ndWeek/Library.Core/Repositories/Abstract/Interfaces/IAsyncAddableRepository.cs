@@ -2,6 +2,7 @@
 {
     public interface IAsyncAddableRepository<Entity> where Entity : AuditableBaseEntity
     {
-        Task<Entity> AddAsync(Entity entity);
+        ValueTask<Entity> AddAsync(Entity entity);
+        Task AddRangeAsync(IEnumerable<Entity> entities);
     }
 }
