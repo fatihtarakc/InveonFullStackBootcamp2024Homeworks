@@ -4,6 +4,8 @@
     {
         public static IServiceCollection AddCacheServices(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddScoped((typeof(ICacheService<>)), typeof(CacheService<>));
+
             services.Configure<ConnectionOptions>
                 (configuration.GetSection(ConnectionOptions.Connections));
 
@@ -15,6 +17,7 @@
                 options.Configuration = configuration.GetConnectionString(connectionOptions.RedisConnectionString);
                 options.InstanceName = "RedisInstance";
             });
+
             return services;
         }
     }

@@ -1,6 +1,4 @@
 ﻿namespace BaSalesManagementApp.Business.Resources
 {
-    public class MessageResources
-    {
-    }
+    public class MessageResources { }
 }

@@ -123,4 +123,10 @@
   <data name="ACCOUNT_ROLE_NOT_FOUND_FOR_USER" xml:space="preserve">
     <value>Role was not found for user !</value>
   </data>
+  <data name="Redis_Cache_Entity_Was_Found" xml:space="preserve">
+    <value>Entity was found in Redis cache !</value>
+  </data>
+  <data name="Redis_Cache_Entity_Was_Not_Found" xml:space="preserve">
+    <value>Entity was not found in Redis cache !</value>
+  </data>
 </root>

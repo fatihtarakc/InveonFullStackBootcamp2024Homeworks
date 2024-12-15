@@ -8,14 +8,20 @@
             this.distributedCache = distributedCache;
         }
 
-        public async Task<Entity> GetCacheAsync(string cacheKey) =>
-            JsonSerializer.Deserialize<Entity>(await distributedCache.GetStringAsync(cacheKey));
+        public async Task<IDataResult<Entity>> GetCacheAsync(string cacheKey)
+        {
+            var entity = JsonSerializer.Deserialize<Entity>(await distributedCache.GetStringAsync(cacheKey));
+            if (entity is null) return new ErrorDataResult<Entity>(Message.Redis_Cache_Entity_Not_Found);
 
-        public async Task SetCacheAsync(string cacheKey, Entity entity, TimeSpan expiration)
+            return new SuccessDataResult<Entity>(entity, Message.Redis_Cache_Entity_Not_Found);
+        }
+
+        public async Task<IResult> SetCacheAsync(string cacheKey, Entity entity, TimeSpan expiration)
         {
             var options = new DistributedCacheEntryOptions { AbsoluteExpirationRelativeToNow = expiration };
 
             await distributedCache.SetStringAsync(cacheKey, JsonSerializer.Serialize(entity), options);
+            return new Result()
         }
     }
 }
