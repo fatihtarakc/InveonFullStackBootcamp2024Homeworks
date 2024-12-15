@@ -11,6 +11,6 @@ global using System.Security.Claims;
 
 global using Library.Core.Entities.Abstract;
 global using Library.Core.Enums;
+global using Library.Core.Options;
 global using Library.DataAccess.Context;
-global using Library.DataAccess.Options;
 global using Library.Entities.Concrete;

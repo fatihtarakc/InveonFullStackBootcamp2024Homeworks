@@ -1,19 +1,14 @@
-using Library.Business.Extensions;
-using Library.DataAccess.Concrete.Extensions;
-using Library.DataAccess.Extensions;
-using Library.MVC.Extensions;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddBusinessServices();
+builder.AddLoggingWebApplicationBuilder();
+
+builder.Services.AddBusinessServices(builder.Configuration);
 builder.Services.AddDataAccessServices(builder.Configuration);
 builder.Services.AddDataAccessConcreteServices(builder.Configuration);
 builder.Services.AddMvcServices();
-
-builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
@@ -25,12 +20,22 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseNotifyUseRequestLocalizationApplicationBuilder();
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+      name: "areas",
+      pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+    );
+});
 
 app.MapControllerRoute(
     name: "default",

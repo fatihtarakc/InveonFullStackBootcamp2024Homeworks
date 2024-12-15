@@ -1,6 +1,6 @@
 ﻿namespace Library.Business.Constants
 {
-    public class Messages
+    public class Message
     {
         public const string ACCOUNT_ROLE_NOT_FOUND_FOR_USER = "ACCOUNT_ROLE_NOT_FOUND_FOR_USER";
         public const string ACCOUNT_NOT_FOUND = "ACCOUNT_NOT_FOUND";

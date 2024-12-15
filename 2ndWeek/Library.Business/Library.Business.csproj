@@ -7,13 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Library.DataAccess.Concrete\Library.DataAccess.Concrete.csproj" />
-    <ProjectReference Include="..\Library.Dtos\Library.Dtos.csproj" />
+    <PackageReference Include="MailKit" Version="4.9.0" />
+    <PackageReference Include="Mapster" Version="7.4.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Abstract\" />
-    <Folder Include="Services\Concrete\" />
+    <ProjectReference Include="..\Library.DataAccess.Concrete\Library.DataAccess.Concrete.csproj" />
+    <ProjectReference Include="..\Library.Dtos\Library.Dtos.csproj" />
   </ItemGroup>
 
 </Project>

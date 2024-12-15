@@ -9,11 +9,13 @@
             services.Configure<ConnectionOptions>
                 (configuration.GetSection(ConnectionOptions.Connections));
 
-            var connectionOptions = configuration.GetSection(ConnectionOptions.Connections).Get<ConnectionOptions>();
+            var serviceProvider = services.BuildServiceProvider();
+            var connectionOptions = serviceProvider.GetRequiredService<IOptions<ConnectionOptions>>().Value;
+            //var connectionOptions = configuration.GetSection(ConnectionOptions.Connections).Get<ConnectionOptions>();
             services.AddDbContext<LibraryDbContext>(dbContextOptionsBuilder =>
             {
                 dbContextOptionsBuilder.UseLazyLoadingProxies();
-                dbContextOptionsBuilder.UseSqlServer(connectionOptions?.MssqlServerConnectionString,
+                dbContextOptionsBuilder.UseSqlServer(connectionOptions.MssqlServerConnectionString,
                     sqlServerDbContextOptionsBuilder => sqlServerDbContextOptionsBuilder.EnableRetryOnFailure(10, TimeSpan.FromSeconds(10), null));
             });
 
