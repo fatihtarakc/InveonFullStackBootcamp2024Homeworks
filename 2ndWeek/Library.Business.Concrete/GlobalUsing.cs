@@ -9,8 +9,8 @@ global using MailKit.Net.Smtp;
 global using MailKit.Security;
 global using System.Linq.Expressions;
 
-global using Library.Business.Services.Abstract;
-global using Library.Business.Services.Concrete;
+global using Library.Business.Abstract.Services.Abstract;
+global using Library.Business.Concrete.Services.Concrete;
 global using Library.Core.Constants;
 global using Library.Core.Enums;
 global using Library.Core.Options;

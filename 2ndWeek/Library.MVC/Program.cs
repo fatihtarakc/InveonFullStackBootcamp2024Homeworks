@@ -6,7 +6,7 @@ builder.AddMvcLoggingWebApplicationBuilder();
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddBackgroundJobsServices(builder.Configuration);
-builder.Services.AddBusinessServices(builder.Configuration);
+builder.Services.AddBusinessConcreteServices(builder.Configuration);
 builder.Services.AddCacheServices(builder.Configuration);
 builder.Services.AddDataAccessServices(builder.Configuration);
 builder.Services.AddDataAccessConcreteServices(builder.Configuration);

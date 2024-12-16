@@ -1,4 +1,4 @@
-﻿namespace Library.Business.Services.Abstract
+﻿namespace Library.Business.Abstract.Services.Abstract
 {
     public interface IAccountService
     {
@@ -7,7 +7,7 @@
         Task<IdentityResult> AddAsync(IdentityUser identityUser, Roles role);
 
         Task<IdentityUser> FindByEmailAsync(string email);
-        
+
         Task<IdentityUser> FindByIdAsync(string id);
 
         Task<IdentityUser> FindByNameAsync(string username);

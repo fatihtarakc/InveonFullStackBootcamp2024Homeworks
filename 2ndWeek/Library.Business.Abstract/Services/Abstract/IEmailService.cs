@@ -1,4 +1,4 @@
-﻿namespace Library.Business.Services.Abstract
+﻿namespace Library.Business.Abstract.Services.Abstract
 {
     public interface IEmailService
     {

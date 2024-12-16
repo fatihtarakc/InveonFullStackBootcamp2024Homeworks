@@ -1,4 +1,4 @@
-﻿namespace Library.Business.Services.Concrete
+﻿namespace Library.Business.Concrete.Services.Concrete
 {
     public class AppUserService : IAppUserService
     {
