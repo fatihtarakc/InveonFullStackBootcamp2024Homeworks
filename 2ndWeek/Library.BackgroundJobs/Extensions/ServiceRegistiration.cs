@@ -4,8 +4,6 @@
     {
         public static IServiceCollection AddBackgroundJobsServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddScoped<IJobSchedulerService, JobSchedulerService>();
-
             services.Configure<ConnectionOptions>
                 (configuration.GetSection(ConnectionOptions.Connections));
 
@@ -14,9 +12,17 @@
             //var connectionOptions = configuration.GetSection(ConnectionOptions.Connections).Get<ConnectionOptions>();
             services.AddHangfire(configuration =>
             {
-                configuration.UseSqlServerStorage(connectionOptions.HangfireConnectionString);
+                configuration.UseSqlServerStorage(connectionOptions.Hangfire);
             });
             services.AddHangfireServer();
+
+            //FireAndForgetJobs.SendEmailJob();
+            services.AddScoped<IJobSchedulerService, JobSchedulerService>(serviceProvider => 
+            {
+                var jobScheculerService = serviceProvider.GetRequiredService<JobSchedulerService>();
+                jobScheculerService.ScheduleJobs();
+                return jobScheculerService;
+            });
 
             return services;
         }

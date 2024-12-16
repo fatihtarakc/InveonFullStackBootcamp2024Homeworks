@@ -9,17 +9,20 @@
             this.db = db;
         }
 
+        #region IAsyncTransactionUnitOfWork
         public Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default) =>
             db.Database.BeginTransactionAsync(cancellationToken);
 
         public async Task<IExecutionStrategy> CreateExecutionStrategy() =>
             await Task.FromResult(db.Database.CreateExecutionStrategy());
+        #endregion
 
-
+        #region IAsyncSaveChangesUnitOfWork
         public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default) =>
             await db.SaveChangesAsync(cancellationToken);
+        #endregion
 
-
+        #region IDispose
         public void Dispose()
         {
             Dispose(true);
@@ -35,7 +38,9 @@
                 disposed = true;
             }
         }
+        #endregion
 
+        #region IDisposeAsync
         public async ValueTask DisposeAsync()
         {
             await DisposeAsync(true);
@@ -51,5 +56,6 @@
                 disposed = true;
             }
         }
+        #endregion
     }
 }

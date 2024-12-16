@@ -1,6 +1,4 @@
 ﻿namespace Library.BackgroundJobs.Schedules
 {
-    public class DelayedJobs
-    {
-    }
+    public class DelayedJobs { }
 }

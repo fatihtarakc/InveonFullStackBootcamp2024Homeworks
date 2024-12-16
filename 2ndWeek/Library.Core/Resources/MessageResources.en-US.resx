@@ -117,14 +117,56 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Account_Email_Has_Already_Exist" xml:space="preserve">
+  <data name="Account_Email_Has_Already_Been_Exist" xml:space="preserve">
     <value>This email address can not be used !</value>
   </data>
   <data name="Account_Login_Failed" xml:space="preserve">
     <value>Login failed. User info o password is incorrect !</value>
   </data>
-  <data name="Account_Username_Has_Already_Exist" xml:space="preserve">
+  <data name="Account_Login_Successful" xml:space="preserve">
+    <value>Login successful !</value>
+  </data>
+  <data name="Account_Username_Has_Already_Been_Exist" xml:space="preserve">
     <value>This username can not be used !</value>
+  </data>
+  <data name="Account_Was_Not_Found" xml:space="preserve">
+    <value>Account was not found !</value>
+  </data>
+  <data name="EmailContent_Has_Been_Sent_For_EmailVerificationCode" xml:space="preserve">
+    <value>In Library account, email verification code</value>
+  </data>
+  <data name="EmailContent_Has_Been_Sent_For_NewAppUser" xml:space="preserve">
+    <value>Your new account was created in Library !</value>
+  </data>
+  <data name="EmailContent_Has_Been_Sent_For_PasswordChangeVerificationCode" xml:space="preserve">
+    <value>In Library account, password change process verification code</value>
+  </data>
+  <data name="EmailContent_Has_Been_Sent_For_TwoFactorAuthenticationVerificationCode" xml:space="preserve">
+    <value>In Library account, two factor authentication process verification code</value>
+  </data>
+  <data name="EmailSubject_Has_Been_Sent_For_EmailVerificationCode" xml:space="preserve">
+    <value>Library account email verification code !</value>
+  </data>
+  <data name="EmailSubject_Has_Been_Sent_For_NewAppUser" xml:space="preserve">
+    <value>New Library Account !</value>
+  </data>
+  <data name="EmailSubject_Has_Been_Sent_For_PasswordChangeVerificationCode" xml:space="preserve">
+    <value>Library account password change verification code !</value>
+  </data>
+  <data name="EmailSubject_Has_Been_Sent_For_TwoFactorAuthenticationVerificationCode" xml:space="preserve">
+    <value>Library account two factor authentication process !</value>
+  </data>
+  <data name="EmailTitle_Has_Been_Sent_For_EmailVerificationCode" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="EmailTitle_Has_Been_Sent_For_NewAppUser" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="EmailTitle_Has_Been_Sent_For_PasswordChangeVerificationCode" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="EmailTitle_Has_Been_Sent_For_TwoFactorAuthenticationVerificationCode" xml:space="preserve">
+    <value>Hello</value>
   </data>
   <data name="Redis_Cache_Entity_Was_Added" xml:space="preserve">
     <value>Entity was added to Redis cache !</value>

@@ -11,6 +11,7 @@ global using System.Linq.Expressions;
 
 global using Library.Business.Abstract.Services.Abstract;
 global using Library.Business.Concrete.Services.Concrete;
+global using Library.Cache.Services.Abstract;
 global using Library.Core.Constants;
 global using Library.Core.Enums;
 global using Library.Core.Options;
@@ -20,3 +21,4 @@ global using Library.Core.Utilities.Results.Concrete;
 global using Library.DataAccess.Abstract.Repositories.Abstract;
 global using Library.Dtos.AppUserDtos;
 global using Library.Dtos.EmailDtos;
+global using Library.Entities.Concrete;

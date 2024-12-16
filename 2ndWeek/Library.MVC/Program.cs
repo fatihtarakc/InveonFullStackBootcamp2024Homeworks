@@ -5,13 +5,13 @@ builder.AddMvcLoggingWebApplicationBuilder();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddBackgroundJobsServices(builder.Configuration);
-builder.Services.AddBusinessConcreteServices(builder.Configuration);
-builder.Services.AddCacheServices(builder.Configuration);
 builder.Services.AddDataAccessServices(builder.Configuration);
 builder.Services.AddDataAccessConcreteServices(builder.Configuration);
-builder.Services.AddMvcServices();
+builder.Services.AddCacheServices(builder.Configuration);
+builder.Services.AddBusinessConcreteServices(builder.Configuration);
 builder.Services.AddQueueServices(builder.Configuration);
+builder.Services.AddBackgroundJobsServices(builder.Configuration);
+builder.Services.AddMvcServices();
 
 var app = builder.Build();
 
@@ -24,7 +24,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.AddMvcUseNotifyUseRequestLocalizationApplicationBuilder();
-app.AddBackgroundJobsUseHangfireDashboardWithPathApplicationBuilder();
+app.AddBackgroundJobsUseHangfireDashboardWithPathApplicationBuilder("/hangfire");
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

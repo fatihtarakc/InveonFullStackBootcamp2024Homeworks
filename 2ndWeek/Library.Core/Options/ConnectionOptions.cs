@@ -2,10 +2,11 @@
 {
     public class ConnectionOptions
     {
-        public const string Connections = "ConnectionStrings";
+        public const string Connections = "Connections";
 
-        public string MssqlServerConnectionString { get; set; }
-        public string HangfireConnectionString { get; set; }
-        public string RedisConnectionString { get; set; }
+        public string MssqlServer { get; set; }
+        public string Hangfire { get; set; }
+        public string Rabbitmq { get; set; }
+        public string Redis { get; set; }
     }
 }

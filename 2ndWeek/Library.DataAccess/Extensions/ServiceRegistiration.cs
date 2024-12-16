@@ -15,7 +15,7 @@
             services.AddDbContext<LibraryDbContext>(dbContextOptionsBuilder =>
             {
                 dbContextOptionsBuilder.UseLazyLoadingProxies();
-                dbContextOptionsBuilder.UseSqlServer(connectionOptions.MssqlServerConnectionString,
+                dbContextOptionsBuilder.UseSqlServer(connectionOptions.MssqlServer,
                     sqlServerDbContextOptionsBuilder => sqlServerDbContextOptionsBuilder.EnableRetryOnFailure(10, TimeSpan.FromSeconds(10), null));
             });
 

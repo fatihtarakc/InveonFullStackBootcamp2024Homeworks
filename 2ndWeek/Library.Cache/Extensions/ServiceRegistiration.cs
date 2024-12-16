@@ -14,7 +14,7 @@
             //var connectionOptions = configuration.GetSection(ConnectionOptions.Connections).Get<ConnectionOptions>();
             services.AddStackExchangeRedisCache(options =>
             {
-                options.Configuration = configuration.GetConnectionString(connectionOptions.RedisConnectionString);
+                options.Configuration = configuration.GetConnectionString(connectionOptions.Redis);
                 options.InstanceName = "RedisInstance";
             });
 

@@ -117,19 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Account_Email_Has_Already_Exist" xml:space="preserve">
+  <data name="Account_Email_Has_Already_Been_Exist" xml:space="preserve">
     <value />
   </data>
   <data name="Account_Login_Failed" xml:space="preserve">
     <value />
   </data>
-  <data name="ACCOUNT_ROLE_NOT_FOUND_FOR_USER" xml:space="preserve">
+  <data name="Account_Login_Successful" xml:space="preserve">
     <value />
   </data>
-  <data name="Account_Username_Has_Already_Exist" xml:space="preserve">
+  <data name="Account_Username_Has_Already_Been_Exist" xml:space="preserve">
     <value />
   </data>
   <data name="Account_Was_Not_Found" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EmailContent_Has_Been_Sent_For_EmailVerificationCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EmailContent_Has_Been_Sent_For_NewAppUser" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EmailContent_Has_Been_Sent_For_PasswordChangeVerificationCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EmailContent_Has_Been_Sent_For_TwoFactorAuthenticationVerificationCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EmailSubject_Has_Been_Sent_For_EmailVerificationCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EmailSubject_Has_Been_Sent_For_NewAppUser" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EmailSubject_Has_Been_Sent_For_PasswordChangeVerificationCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EmailSubject_Has_Been_Sent_For_TwoFactorAuthenticationVerificationCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EmailTitle_Has_Been_Sent_For_EmailVerificationCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EmailTitle_Has_Been_Sent_For_NewAppUser" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EmailTitle_Has_Been_Sent_For_PasswordChangeVerificationCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EmailTitle_Has_Been_Sent_For_TwoFactorAuthenticationVerificationCode" xml:space="preserve">
     <value />
   </data>
   <data name="Redis_Cache_Entity_Was_Added" xml:space="preserve">
