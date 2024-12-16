@@ -14,7 +14,7 @@
             using LibraryDbContext db = new(dbContextOptionsBuilder.Options);
             if (!(await db.Roles.AnyAsync())) await AddRolesAsync(db);
 
-            if ((await userManager.FindByEmailAsync(email) is null ? false : true) is false) await AddAdminAsync(db, userManager);
+            if ((await userManager.FindByEmailAsync(email) is null ? false : true) && (await userManager.FindByEmailAsync(email) is null ? false : true) is false) await AddAdminAsync(db, userManager);
 
             await Task.CompletedTask;
         }

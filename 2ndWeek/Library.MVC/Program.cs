@@ -1,14 +1,17 @@
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddMvcLoggingWebApplicationBuilder();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.AddLoggingWebApplicationBuilder();
-
+builder.Services.AddBackgroundJobsServices(builder.Configuration);
 builder.Services.AddBusinessServices(builder.Configuration);
+builder.Services.AddCacheServices(builder.Configuration);
 builder.Services.AddDataAccessServices(builder.Configuration);
 builder.Services.AddDataAccessConcreteServices(builder.Configuration);
 builder.Services.AddMvcServices();
+builder.Services.AddQueueServices(builder.Configuration);
 
 var app = builder.Build();
 
@@ -20,7 +23,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseNotifyUseRequestLocalizationApplicationBuilder();
+app.AddMvcUseNotifyUseRequestLocalizationApplicationBuilder();
+app.AddBackgroundJobsUseHangfireDashboardWithPathApplicationBuilder();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

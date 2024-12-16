@@ -117,14 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ACCOUNT_NOT_FOUND" xml:space="preserve">
-    <value>Email address or password is in correct !</value>
+  <data name="Account_Email_Has_Already_Exist" xml:space="preserve">
+    <value>This email address can not be used !</value>
   </data>
-  <data name="ACCOUNT_ROLE_NOT_FOUND_FOR_USER" xml:space="preserve">
-    <value>Role was not found for user !</value>
+  <data name="Account_Login_Failed" xml:space="preserve">
+    <value>Login failed. User info o password is incorrect !</value>
+  </data>
+  <data name="Account_Username_Has_Already_Exist" xml:space="preserve">
+    <value>This username can not be used !</value>
+  </data>
+  <data name="Redis_Cache_Entity_Was_Added" xml:space="preserve">
+    <value>Entity was added to Redis cache !</value>
   </data>
   <data name="Redis_Cache_Entity_Was_Found" xml:space="preserve">
     <value>Entity was found in Redis cache !</value>
+  </data>
+  <data name="Redis_Cache_Entity_Was_Not_Added" xml:space="preserve">
+    <value>Entity was not added to Redis cache !</value>
   </data>
   <data name="Redis_Cache_Entity_Was_Not_Found" xml:space="preserve">
     <value>Entity was not found in Redis cache !</value>

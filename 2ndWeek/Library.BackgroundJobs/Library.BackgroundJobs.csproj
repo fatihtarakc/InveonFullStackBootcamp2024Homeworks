@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire" Version="1.8.17" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Managers\ContinuationJobs\" />
+    <Folder Include="Managers\DelayedJobs\" />
+    <Folder Include="Managers\RecurringJobs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Library.Queue\Library.Queue.csproj" />
+  </ItemGroup>
+
+</Project>

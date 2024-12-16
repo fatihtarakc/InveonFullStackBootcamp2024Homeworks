@@ -11,10 +11,12 @@ global using System.Linq.Expressions;
 
 global using Library.Business.Services.Abstract;
 global using Library.Business.Services.Concrete;
+global using Library.Core.Constants;
 global using Library.Core.Enums;
 global using Library.Core.Options;
 global using Library.Core.UnitOfWorks.Interfaces;
 global using Library.Core.Utilities.Results.Abstract;
+global using Library.Core.Utilities.Results.Concrete;
 global using Library.DataAccess.Abstract.Repositories.Abstract;
 global using Library.Dtos.AppUserDtos;
 global using Library.Dtos.EmailDtos;

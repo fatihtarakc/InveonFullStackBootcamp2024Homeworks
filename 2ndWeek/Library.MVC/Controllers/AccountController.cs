@@ -22,21 +22,21 @@
             var identityUser = await accountService.FindByEmailAsync(identityUserSignInVM.Email);
             if (identityUser is null)
             {
-                NotifyError(Message.ACCOUNT_NOT_FOUND);
+                NotifyError(Message.Account_Not_Found);
                 return View(identityUserSignInVM);
             }
 
             Microsoft.AspNetCore.Identity.SignInResult signInResult = await accountService.PasswordSignInAsync(identityUser, identityUserSignInVM.Password, identityUserSignInVM.IsPersistant);
             if (!signInResult.Succeeded) 
             {
-                NotifyError(Message.ACCOUNT_NOT_FOUND);
+                NotifyError(Message.Account_Not_Found);
                 return View(identityUserSignInVM);
             }
 
             var role = await accountService.GetRoleAsync(identityUser);
             if (role is null)
             {
-                NotifyError(Message.ACCOUNT_ROLE_NOT_FOUND_FOR_USER);
+                NotifyError(Message.Account_Role_Not_Found_For_User);
                 return View(identityUserSignInVM);
             }
             if (role is Roles.Admin) return RedirectToAction("Index", "Home", new { area = "Admin" });

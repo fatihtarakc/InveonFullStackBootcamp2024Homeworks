@@ -4,11 +4,13 @@
     {
         Task<bool> AnyAsync(Expression<Func<IdentityUser, bool>> expression);
 
-        Task<IdentityResult> CreateAsync(IdentityUser identityUser, Roles role);
+        Task<IdentityResult> AddAsync(IdentityUser identityUser, Roles role);
 
         Task<IdentityUser> FindByEmailAsync(string email);
         
-        Task<IdentityUser> FindByIdAsync(string identityUserId);
+        Task<IdentityUser> FindByIdAsync(string id);
+
+        Task<IdentityUser> FindByNameAsync(string username);
 
         Task<Roles?> GetRoleAsync(IdentityUser identityUser);
 

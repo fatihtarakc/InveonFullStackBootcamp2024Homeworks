@@ -10,11 +10,14 @@ global using System.ComponentModel.DataAnnotations;
 global using System.Globalization;
 global using System.Reflection;
 
-global using Library.Business.Constants;
+global using Library.BackgroundJobs.Extensions;
 global using Library.Business.Extensions;
 global using Library.Business.Services.Abstract;
+global using Library.Cache.Extensions;
 global using Library.Core.Enums;
+global using Library.Core.Constants;
 global using Library.DataAccess.Concrete.Extensions;
 global using Library.DataAccess.Extensions;
 global using Library.MVC.Extensions;
 global using Library.MVC.Models.ViewModels.IdentityUserVMs;
+global using Library.Queue.Extensions;

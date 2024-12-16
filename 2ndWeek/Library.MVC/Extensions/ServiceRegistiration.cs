@@ -2,7 +2,7 @@
 {
     public static class ServiceRegistiration
     {
-        public static WebApplicationBuilder AddLoggingWebApplicationBuilder(this WebApplicationBuilder builder)
+        public static WebApplicationBuilder AddMvcLoggingWebApplicationBuilder(this WebApplicationBuilder builder)
         {
             builder.Logging
                 .AddConfiguration(builder.Configuration.GetSection("Logging"))
@@ -36,7 +36,7 @@
             return services;
         }
 
-        public static IApplicationBuilder UseNotifyUseRequestLocalizationApplicationBuilder(this IApplicationBuilder applicationBuilder)
+        public static IApplicationBuilder AddMvcUseNotifyUseRequestLocalizationApplicationBuilder(this IApplicationBuilder applicationBuilder)
         {
             var supportedCultures = new[]
             {
@@ -45,10 +45,10 @@
 
             var requestLocalizationOptions = new RequestLocalizationOptions
             {
-                SupportedCultures = supportedCultures,
-                SupportedUICultures = supportedCultures,
+                ApplyCurrentCultureToResponseHeaders = true,
                 DefaultRequestCulture = new RequestCulture("tr-TR"),
-                ApplyCurrentCultureToResponseHeaders = true
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
             };
 
             applicationBuilder.UseNotyf();

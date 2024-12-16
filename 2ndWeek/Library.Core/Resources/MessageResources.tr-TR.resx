@@ -117,14 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ACCOUNT_NOT_FOUND" xml:space="preserve">
-    <value>Email adresi ya da şifre hatalı !</value>
+  <data name="Account_Email_Has_Already_Exist" xml:space="preserve">
+    <value>Bu email adresi kullanılamaz !</value>
   </data>
-  <data name="ACCOUNT_ROLE_NOT_FOUND_FOR_USER" xml:space="preserve">
-    <value>Kullanıcı için rol bulunamadı !</value>
+  <data name="Account_Login_Failed" xml:space="preserve">
+    <value>Giriş başarısız. Kullanıcı bilgisi veya şifre hatalı !</value>
+  </data>
+  <data name="Account_Username_Has_Already_Exist" xml:space="preserve">
+    <value>Bu username kullanılamaz !</value>
+  </data>
+  <data name="Redis_Cache_Entity_Was_Added" xml:space="preserve">
+    <value>Redis önbelleğine entity eklendi !</value>
   </data>
   <data name="Redis_Cache_Entity_Was_Found" xml:space="preserve">
     <value>Redis önbelleğinde entity bulundu !</value>
+  </data>
+  <data name="Redis_Cache_Entity_Was_Not_Added" xml:space="preserve">
+    <value>Redis önbelleğine entity eklenemedi !</value>
   </data>
   <data name="Redis_Cache_Entity_Was_Not_Found" xml:space="preserve">
     <value>Redis önbelleğinde entity bulunamadı !</value>

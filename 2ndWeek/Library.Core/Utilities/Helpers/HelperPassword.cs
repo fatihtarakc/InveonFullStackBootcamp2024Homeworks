@@ -20,12 +20,9 @@
 
             allCharacters = allCharacters.OrderBy(orderBy => random.Next(allCharacters.Length)).ToArray();
 
-            for (int i = 5; i <= length; i++)
-            {
-                password.Append(allCharacters[random.Next(allCharacters.Length)]);
-            }
+            for (int i = 5; i <= length; i++) password.Append(allCharacters[random.Next(allCharacters.Length)]);
 
-            return new string(password.ToString().OrderBy(orderBy => random.Next(allCharacters.Length)).ToArray());
+            return new string(password.ToString().OrderBy(orderBy => random.Next()).ToArray());
         }
     }
 }

@@ -3,7 +3,7 @@
     public class LibraryDbContext : IdentityDbContext<IdentityUser, IdentityRole, string>
     {
         private readonly IHttpContextAccessor? httpContextAccessor;
-        //public LibraryDbContext() { }
+        public LibraryDbContext() { }
         public LibraryDbContext(DbContextOptions<LibraryDbContext> options, IHttpContextAccessor httpContextAccessor = null) : base(options)
         {
             this.httpContextAccessor = httpContextAccessor;
@@ -14,11 +14,11 @@
         public virtual DbSet<AppUserBook>? AppUserBooks { get; set; }
         public virtual DbSet<Book>? Books { get; set; }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    base.OnConfiguring(optionsBuilder);
-        //    optionsBuilder.UseSqlServer("Server=localhost, 1434; Database=LibraryDb; User=sa; Password=Dockermssqldb2024+-!?; TrustServerCertificate=True;");
-        //}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseSqlServer("Server=localhost, 1434; Database=LibraryDb; User=sa; Password=Dockermssqldb2024+-!?; TrustServerCertificate=True;");
+        }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
