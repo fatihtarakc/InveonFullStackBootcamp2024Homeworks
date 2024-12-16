@@ -6,7 +6,6 @@
         {
             builder.HasKey(baseEntity => baseEntity.Id);
             builder.Property(baseEntity => baseEntity.Id).ValueGeneratedOnAdd();
-            builder.Property(baseEntity => baseEntity.Status).HasConversion(role => role.ToString(), role => (Status)Enum.Parse<Roles>(role));
         }
     }
 }
