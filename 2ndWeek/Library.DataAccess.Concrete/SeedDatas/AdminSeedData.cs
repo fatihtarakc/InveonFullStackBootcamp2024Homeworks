@@ -38,10 +38,7 @@
             Admin admin = new()
             {
                 Email = email.ToLowerInvariant(),
-                IdentityId = identityUser.Id,
-                Status = Status.Added, // emailconfirmed = true => status.activated
-                CreatedBy = "super admin",
-                CreatedDate = DateTime.Now
+                IdentityId = identityUser.Id
             };
             await db.Admins.AddAsync(admin);
             await db.SaveChangesAsync();

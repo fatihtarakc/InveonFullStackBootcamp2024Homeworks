@@ -132,6 +132,42 @@
   <data name="Account_Was_Not_Found" xml:space="preserve">
     <value />
   </data>
+  <data name="AppUser_CouldNotBe_Added" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AppUser_HasBeen_Added" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Book_CouldNotBe_Added" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Book_CouldNotBe_Deleted" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Book_CouldNotBe_Updated" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Book_GetAllProcess_Was_Failed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Book_GetAllProcess_Was_Successful" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Book_HasBeen_Added" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Book_HasBeen_Deleted" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Book_HasBeen_Updated" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Book_Was_Found_Successfully" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Book_Was_Not_Found" xml:space="preserve">
+    <value />
+  </data>
   <data name="EmailContent_Has_Been_Sent_For_EmailVerificationCode" xml:space="preserve">
     <value />
   </data>
@@ -166,6 +202,30 @@
     <value />
   </data>
   <data name="EmailTitle_Has_Been_Sent_For_TwoFactorAuthenticationVerificationCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Email_SendingProcess_Was_Failed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Email_SendingProcess_Was_Successful" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Rabbitmq_EnqueueModelProcess_Was_Failed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Rabbitmq_EnqueueModelProcess_Was_Successful" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Rabbitmq_EnqueueModelsProcess_Were_Failed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Rabbitmq_EnqueueModelsProcess_Were_Successful" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Rabbitmq_StartSendingEmailProcess_Was_Failed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Rabbitmq_StartSendingEmailProcess_Was_Successful" xml:space="preserve">
     <value />
   </data>
   <data name="Redis_Cache_Entity_Was_Added" xml:space="preserve">

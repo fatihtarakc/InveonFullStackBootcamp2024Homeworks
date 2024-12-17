@@ -1,12 +1,8 @@
-﻿namespace Library.Entities.Concrete
+﻿namespace Library.Dtos.BookDtos
 {
-    public class Book : AuditableBaseEntity
+    public class BookDto
     {
-        public Book()
-        {
-            AppUsers = new HashSet<AppUser>();
-        }
-
+        public Guid Id { get; set; }
         public string Title { get; set; }
         public int PageCount { get; set; }
         public string Author { get; set; }
@@ -17,8 +13,6 @@
         public string ISBN { get; set; }
         public string Summary { get; set; }
         public int AvailableCopies { get; set; }
-
-        // Relations
-        public virtual ICollection<AppUser> AppUsers { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }

@@ -22,6 +22,21 @@ namespace Library.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("AppUserBook", b =>
+                {
+                    b.Property<Guid>("AppUsersId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("BooksId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("AppUsersId", "BooksId");
+
+                    b.HasIndex("BooksId");
+
+                    b.ToTable("AppUserBook");
+                });
+
             modelBuilder.Entity("Library.Entities.Concrete.Admin", b =>
                 {
                     b.Property<Guid>("Id")
@@ -114,49 +129,6 @@ namespace Library.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppUsers");
-                });
-
-            modelBuilder.Entity("Library.Entities.Concrete.AppUserBook", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("AppUserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("BookId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifiedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("ModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserId");
-
-                    b.HasIndex("BookId");
-
-                    b.ToTable("AppUserBooks");
                 });
 
             modelBuilder.Entity("Library.Entities.Concrete.Book", b =>
@@ -427,23 +399,19 @@ namespace Library.DataAccess.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Library.Entities.Concrete.AppUserBook", b =>
+            modelBuilder.Entity("AppUserBook", b =>
                 {
-                    b.HasOne("Library.Entities.Concrete.AppUser", "AppUser")
-                        .WithMany("AppUserBooks")
-                        .HasForeignKey("AppUserId")
+                    b.HasOne("Library.Entities.Concrete.AppUser", null)
+                        .WithMany()
+                        .HasForeignKey("AppUsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Library.Entities.Concrete.Book", "Book")
-                        .WithMany("AppUserBooks")
-                        .HasForeignKey("BookId")
+                    b.HasOne("Library.Entities.Concrete.Book", null)
+                        .WithMany()
+                        .HasForeignKey("BooksId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("AppUser");
-
-                    b.Navigation("Book");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -495,16 +463,6 @@ namespace Library.DataAccess.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Library.Entities.Concrete.AppUser", b =>
-                {
-                    b.Navigation("AppUserBooks");
-                });
-
-            modelBuilder.Entity("Library.Entities.Concrete.Book", b =>
-                {
-                    b.Navigation("AppUserBooks");
                 });
 #pragma warning restore 612, 618
         }

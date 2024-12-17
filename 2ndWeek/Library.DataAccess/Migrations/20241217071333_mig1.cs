@@ -228,46 +228,33 @@ namespace Library.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AppUserBooks",
+                name: "AppUserBook",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    AppUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    BookId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DeletedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    AppUsersId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    BooksId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AppUserBooks", x => x.Id);
+                    table.PrimaryKey("PK_AppUserBook", x => new { x.AppUsersId, x.BooksId });
                     table.ForeignKey(
-                        name: "FK_AppUserBooks_AppUsers_AppUserId",
-                        column: x => x.AppUserId,
+                        name: "FK_AppUserBook_AppUsers_AppUsersId",
+                        column: x => x.AppUsersId,
                         principalTable: "AppUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_AppUserBooks_Books_BookId",
-                        column: x => x.BookId,
+                        name: "FK_AppUserBook_Books_BooksId",
+                        column: x => x.BooksId,
                         principalTable: "Books",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_AppUserBooks_AppUserId",
-                table: "AppUserBooks",
-                column: "AppUserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AppUserBooks_BookId",
-                table: "AppUserBooks",
-                column: "BookId");
+                name: "IX_AppUserBook_BooksId",
+                table: "AppUserBook",
+                column: "BooksId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -316,7 +303,7 @@ namespace Library.DataAccess.Migrations
                 name: "Admins");
 
             migrationBuilder.DropTable(
-                name: "AppUserBooks");
+                name: "AppUserBook");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");

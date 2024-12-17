@@ -2,11 +2,13 @@
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Localization;
 global using Microsoft.Extensions.Logging;
 global using Microsoft.Extensions.Options;
 global using MimeKit;
 global using MailKit.Net.Smtp;
 global using MailKit.Security;
+global using Mapster;
 global using System.Linq.Expressions;
 
 global using Library.Business.Abstract.Services.Abstract;
@@ -15,10 +17,12 @@ global using Library.Cache.Services.Abstract;
 global using Library.Core.Constants;
 global using Library.Core.Enums;
 global using Library.Core.Options;
+global using Library.Core.Resources;
 global using Library.Core.UnitOfWorks.Interfaces;
 global using Library.Core.Utilities.Results.Abstract;
 global using Library.Core.Utilities.Results.Concrete;
 global using Library.DataAccess.Abstract.Repositories.Abstract;
 global using Library.Dtos.AppUserDtos;
+global using Library.Dtos.BookDtos;
 global using Library.Dtos.EmailDtos;
 global using Library.Entities.Concrete;

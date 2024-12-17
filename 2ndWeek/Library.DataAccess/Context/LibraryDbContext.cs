@@ -11,7 +11,6 @@
 
         public virtual DbSet<Admin>? Admins { get; set; }
         public virtual DbSet<AppUser>? AppUsers { get; set; }
-        public virtual DbSet<AppUserBook>? AppUserBooks { get; set; }
         public virtual DbSet<Book>? Books { get; set; }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -49,29 +48,40 @@
         {
             if (entityEntry.State is not EntityState.Added) return;
 
-            entityEntry.Entity.CreatedBy = userId;
+            if (entityEntry.Entity is Admin)
+            {
+                entityEntry.Entity.Status = Status.Activated;
+                entityEntry.Entity.CreatedBy = "super admin";
+            }
+            else if (entityEntry.Entity is AppUser)
+            {
+                entityEntry.Entity.Status = Status.Passivated;
+                entityEntry.Entity.CreatedBy = userId;
+            }
+            else if (entityEntry.Entity is Book)
+            {
+                entityEntry.Entity.Status = Status.Added;
+                entityEntry.Entity.CreatedBy = userId;
+            }
             entityEntry.Entity.CreatedDate = DateTime.Now;
-            entityEntry.Entity.Status = Status.Added;
         }
 
         private void SetIfDeleted(EntityEntry<AuditableBaseEntity> entityEntry, string userId)
         {
             if (entityEntry.State is not EntityState.Deleted) return;
 
-            entityEntry.State = EntityState.Modified;
-            entityEntry.Entity.DeletedBy = userId;
-            entityEntry.Entity.DeletedDate = DateTime.Now;
             entityEntry.Entity.Status = Status.Deleted;
+            if (entityEntry.Entity is Admin) entityEntry.Entity.DeletedBy = "super admin";
+            else entityEntry.Entity.DeletedBy = userId;
+            entityEntry.Entity.DeletedDate = DateTime.Now;
         }
 
         private void SetIfModified(EntityEntry<AuditableBaseEntity> entityEntry, string userId)
         {
-            if (entityEntry.State is EntityState.Added) return;
-            if (entityEntry.State is EntityState.Deleted) return;
+            if (entityEntry.State is not EntityState.Modified) return;
 
             entityEntry.Entity.ModifiedBy = userId;
             entityEntry.Entity.ModifiedDate = DateTime.Now;
-            entityEntry.Entity.Status = Status.Modified;
         }
     }
 }

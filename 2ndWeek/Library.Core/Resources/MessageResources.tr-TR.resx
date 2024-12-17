@@ -132,6 +132,42 @@
   <data name="Account_Was_Not_Found" xml:space="preserve">
     <value>Hesap bulunamadı !</value>
   </data>
+  <data name="AppUser_CouldNotBe_Added" xml:space="preserve">
+    <value>Library'ye user ekleme işlemi başarız !</value>
+  </data>
+  <data name="AppUser_HasBeen_Added" xml:space="preserve">
+    <value>User, sisteme başarılı bir şekilde eklendi !</value>
+  </data>
+  <data name="Book_CouldNotBe_Added" xml:space="preserve">
+    <value>Kitap kütüphanenize eklenemedi !</value>
+  </data>
+  <data name="Book_CouldNotBe_Deleted" xml:space="preserve">
+    <value>Kitap kütüphanenizden silinemedi !</value>
+  </data>
+  <data name="Book_CouldNotBe_Updated" xml:space="preserve">
+    <value>Kütüphanenizde bulunan kitap güncellenemedi !</value>
+  </data>
+  <data name="Book_GetAllProcess_Was_Failed" xml:space="preserve">
+    <value>Kütüphanenizdeki kitapları getirme işlemi başarısız !</value>
+  </data>
+  <data name="Book_GetAllProcess_Was_Successful" xml:space="preserve">
+    <value>Kütüphanenizdeki kitapları getirme işlemi başarılı !</value>
+  </data>
+  <data name="Book_HasBeen_Added" xml:space="preserve">
+    <value>Kitap, kütüphanene başarılı bir şekilde eklendi !</value>
+  </data>
+  <data name="Book_HasBeen_Deleted" xml:space="preserve">
+    <value>Kitap kütüphanenizden başarılı bir şekilde silindi !</value>
+  </data>
+  <data name="Book_HasBeen_Updated" xml:space="preserve">
+    <value>Kütüphanenizde bulunan kitap başarılı bir şekilde güncellendi !</value>
+  </data>
+  <data name="Book_Was_Found_Successfully" xml:space="preserve">
+    <value>Kitap bulma işlemi başarılı !</value>
+  </data>
+  <data name="Book_Was_Not_Found" xml:space="preserve">
+    <value>Kitap bulunamadı !</value>
+  </data>
   <data name="EmailContent_Has_Been_Sent_For_EmailVerificationCode" xml:space="preserve">
     <value>Library hesabında email doğrulama kodu</value>
   </data>
@@ -167,6 +203,30 @@
   </data>
   <data name="EmailTitle_Has_Been_Sent_For_TwoFactorAuthenticationVerificationCode" xml:space="preserve">
     <value>Merhaba</value>
+  </data>
+  <data name="Email_SendingProcess_Was_Failed" xml:space="preserve">
+    <value>Email gönderme işlemi başarısız !</value>
+  </data>
+  <data name="Email_SendingProcess_Was_Successful" xml:space="preserve">
+    <value>Email gönderme işlemi başarılı !</value>
+  </data>
+  <data name="Rabbitmq_EnqueueModelProcess_Was_Failed" xml:space="preserve">
+    <value>Rabbitmq ile modeli kuyruğa alma işlemi başarısız !</value>
+  </data>
+  <data name="Rabbitmq_EnqueueModelProcess_Was_Successful" xml:space="preserve">
+    <value>Rabbitmq ile email göndermeye başlama işlemi başarılı !</value>
+  </data>
+  <data name="Rabbitmq_EnqueueModelsProcess_Were_Failed" xml:space="preserve">
+    <value>Rabbitmq ile modelleri kuyruğa alma işlemi başarısız !</value>
+  </data>
+  <data name="Rabbitmq_EnqueueModelsProcess_Were_Successful" xml:space="preserve">
+    <value>Rabbitmq ile modelleri kuyruğa alma işlemi başarılı !</value>
+  </data>
+  <data name="Rabbitmq_StartSendingEmailProcess_Was_Failed" xml:space="preserve">
+    <value>Rabbitmq ile email göndermeye başlama işlemi başarısız !</value>
+  </data>
+  <data name="Rabbitmq_StartSendingEmailProcess_Was_Successful" xml:space="preserve">
+    <value>Rabbitmq ile email göndermeye başlama işlemi başarılı !</value>
   </data>
   <data name="Redis_Cache_Entity_Was_Added" xml:space="preserve">
     <value>Redis önbelleğine entity eklendi !</value>

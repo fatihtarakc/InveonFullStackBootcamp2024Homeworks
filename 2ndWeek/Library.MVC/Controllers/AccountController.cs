@@ -1,4 +1,6 @@
-﻿namespace Library.MVC.Controllers
+﻿using Library.MVC.Models.ViewModels.AppUserVMs;
+
+namespace Library.MVC.Controllers
 {
     public class AccountController : BaseController
     {
@@ -22,21 +24,21 @@
             var identityUser = await accountService.FindByEmailAsync(identityUserSignInVM.Email);
             if (identityUser is null)
             {
-                NotifyError(Message.Account_Login_Failed);
+                NotifyError(Messages.Account_Login_Failed);
                 return View(identityUserSignInVM);
             }
 
             Microsoft.AspNetCore.Identity.SignInResult signInResult = await accountService.PasswordSignInAsync(identityUser, identityUserSignInVM.Password, identityUserSignInVM.IsPersistant);
             if (!signInResult.Succeeded) 
             {
-                NotifyError(Message.Account_Login_Failed);
+                NotifyError(Messages.Account_Login_Failed);
                 return View(identityUserSignInVM);
             }
 
             var role = await accountService.GetRoleAsync(identityUser);
             if (role is null)
             {
-                NotifyError(Message.Account_Login_Failed);
+                NotifyError(Messages.Account_Login_Failed);
                 return View(identityUserSignInVM);
             }
             if (role is Roles.Admin) return RedirectToAction("Index", "Home", new { area = "Admin" });
@@ -52,7 +54,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult SignUp(string identityUserSignUpVM)
+        public IActionResult SignUp(AppUserSignUpVM appUserSignUpVM)
         {
             return View();
         }

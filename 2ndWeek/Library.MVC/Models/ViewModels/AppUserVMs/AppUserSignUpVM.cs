@@ -1,12 +1,12 @@
-﻿namespace Library.Dtos.AppUserDtos
+﻿namespace Library.MVC.Models.ViewModels.AppUserVMs
 {
-    public class AppUserDto
+    public class AppUserSignUpVM
     {
-        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string RePassword { get; set; }
     }
 }

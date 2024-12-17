@@ -19,7 +19,7 @@
                 var connection = await factory.CreateConnectionAsync();
                 return await connection.CreateChannelAsync();
             }
-            catch
+            catch (Exception exception)
             {
                 Thread.Sleep(5000);
                 return await CreateChannelAsync();

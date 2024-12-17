@@ -2,14 +2,12 @@
 {
     public interface IEmailService
     {
-        Task SendAsync(EmailDto emailDto);
+        Task<IResult> SendingEmailForNewAppUserAsync(EmailForNewAppUserDto emailForNewAppUserDto);
 
-        Task SendingEmailForNewAppUserAsync(EmailForNewAppUserDto emailForNewAppUserDto);
+        Task<IResult> SendingEmailForEmailVerificationCodeAsync(EmailForVerificationCodeDto emailForVerificationCodeDto);
 
-        Task SendingEmailForEmailVerificationCodeAsync(EmailForVerificationCodeDto emailForVerificationCodeDto);
+        Task<IResult> SendingEmailForPasswordChangeVerificationCodeAsync(EmailForVerificationCodeDto emailForVerificationCodeDto);
 
-        Task SendingEmailForPasswordChangeVerificationCodeAsync(EmailForVerificationCodeDto emailForVerificationCodeDto);
-
-        Task SendingEmailForTwoFactorAuthenticationVerificationCodeAsync(EmailForVerificationCodeDto emailForVerificationCodeDto);
+        Task<IResult> SendingEmailForTwoFactorAuthenticationVerificationCodeAsync(EmailForVerificationCodeDto emailForVerificationCodeDto);
     }
 }

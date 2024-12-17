@@ -4,7 +4,7 @@
     {
         public AppUser() 
         {
-            AppUserBooks = new HashSet<AppUserBook>();
+            Books = new HashSet<Book>();
         }
 
         public string Name { get; set; }
@@ -12,6 +12,6 @@
         public string VerificationCode { get; set; }
 
         // Relations
-        public virtual ICollection<AppUserBook> AppUserBooks { get; set; }
+        public virtual ICollection<Book> Books { get; set; }
     }
 }

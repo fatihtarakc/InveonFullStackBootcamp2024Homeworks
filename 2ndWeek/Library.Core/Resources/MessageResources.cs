@@ -1,4 +1,4 @@
-﻿namespace BaSalesManagementApp.Business.Resources
+﻿namespace Library.Core.Resources
 {
     public class MessageResources { }
 }
